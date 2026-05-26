@@ -1,0 +1,26 @@
+import { Dimensions } from 'react-native';
+
+const { width, height } = Dimensions.get('window');
+//  console.log("Responsive width: ", width)
+//  console.log("Responsive height: ", height)
+
+// Viewport Width (like CSS vw)
+export const vw = (percentage) => (width * percentage) / 100;
+
+// Viewport Height (like CSS vh)
+export const vh = (percentage) => (height * percentage) / 100;
+
+// Font scaling based on screen width
+export const fs = (size) => {
+    const baseWidth = 375; // iPhone X width
+    return (width / baseWidth) * size;
+};
+
+// Spacing utility
+export const spacing = {
+    xs: vw(2),   // 2% of screen width
+    sm: vw(3),   // 3%
+    md: vw(4),   // 4%
+    lg: vw(5),   // 5%
+    xl: vw(6),   // 6%
+};
